@@ -1,16 +1,16 @@
-
 ######################################
 #  - From Decimal to Binary, Octal   #
-#	& Hexadecimal 					#
+#	& Hexadecimal 					 #
 #  - From Octal & Binary to Decimal  #
 ######################################
 
-print("*" * 34)
-print("\n  1 => Decimal To Other Base")
-print("  2 => Octal & Binary To Decimal\n")
-print("*" * 34)
+print('\n')
+print("*" * 45)
+print("\t1 => Decimal To Other Base")
+print("\t2 => Octal & Binary To Decimal")
+print("*" * 45)
 
-a = int(input("Enter 1 or 2 To Start Convertion :\n"))
+a = int(input("\nEnter 1 or 2 To Start Convertion : "))
 
 if(a == 1):
 	def convert(n, b):
@@ -32,9 +32,8 @@ if(a == 1):
 				i = "E"
 			elif(i == 15):
 				i = "F"
-			print(i, end="")
-		print(" ")
-		
+			print(i , end = "")
+		print(" ")	
 
 	T = int(input("Enter How May Bases You Want To Convert: "))
 	for i in range(T):
@@ -52,20 +51,26 @@ elif(a == 2):
 			k.insert(0, n%10)
 			n = n//10
 			d = len(k)-1
-			j = 0		
+			j = 0
+			z = True	
 		for i in k:
-			if(i > b):
-				print("error")
-				break
+			if(i > b-1):
+				z = False
 			else:
 				j += i*(b**d)
 				d = d - 1
-		print(j)
+				z = True
+		if(z==True):
+			print(j, end = "")
+			print(" ")
+		else:
+			print("Error")
 	
 	T = int(input("Enter How May Bases You Want To Convert: "))
 	for i in range (T):
 		n = int(input("Enter Your Value To Convert: "))
-		b = int(input("Enter The Base Number Of The Above Value: \n"))
-		con(n,b)
+		b = int(input("Enter The Base Number Of The Above Value: "))
+		con(n, b)
+
 else:
-	print("Enter number correctly")
+	print("Please, Enter Menu Number Correctly\n")
