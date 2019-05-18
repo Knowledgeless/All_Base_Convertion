@@ -48,11 +48,12 @@ elif(a == 2):
 		c = n
 		h = []
 		while(n>0):
-			k.insert(0, n%10)
-			n = n//10
+			k.insert(0, n%10)	#putting numbers as a list
+			n = n//10		#dividing n until its become 0
 			d = len(k)-1
 			j = 0
-			z = True	
+			z = True
+		#Checking is the base is small then the digit of number. 
 		for i in k:
 			if(i > b-1):
 				z = False
